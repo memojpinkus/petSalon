@@ -9,47 +9,10 @@ let salon={
         open:"9:00 AM",
         close:"5:00 PM"
     },
-    pets:[
-        {
-            name:"Scooby",
-            age:60,
-            gender:"Male",
-            breed:"Dane",
-            service:"Grooming",
-            owner:"Shaggy",
-            phone:"555-555-5555"
-        },
-        {
-            name:"Scrappy",
-            age:40,
-            gender:"Male",
-            breed:"Mixed",
-            service:"Grooming",
-            owner:"Shaggy",
-            phone:"555-555-5555"
-        },
-        {
-            name:"Sukha",
-            age:3,
-            gender:"Male",
-            breed:"Pomeranian",
-            service:"Grooming",
-            owner:"Memo",
-            phone:"555-123-1234"
-        },
-        {
-            name:"Mona",
-            age:20,
-            gender:"Female",
-            breed:"Husky",
-            service:"Grooming",
-            owner:"Memo",
-            phone:"555-321-4321"
-        }
-    ]
+    pets:[]
 }
 
-console.log(salon.pets);
+// console.log(salon.pets);
 
 function displayPetNames(){
     for(let i = 0; i < salon.pets.length; i++){
@@ -57,7 +20,38 @@ function displayPetNames(){
     }
 }
 
-alert(`There are ${salon.pets.length} pets`);
+// alert(`There are ${salon.pets.length} pets`);
 
-displayPetNames();
+// displayPetNames();
 
+
+//create the constructor
+function Pet(name,age,gender){
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+}
+
+//create three pets using the constructor
+let pet1 = new Pet("Sukha", 3, "Male");
+let pet2 = new Pet("Mona", 13, "Female");
+let pet3 = new Pet("Scrappy", 7, "Male");
+
+salon.pets.push(pet1); //push the element into the array
+
+//getting the inputs from the html
+let petName = document.getElementById("txtName");
+let petAge = document.getElementById("txtAge");
+let petGender = document.getElementById("txtGender");
+
+function register(){
+    console.log("Register");
+    //create an obj
+    let thePet = new Pet(petName.value,petAge.value,petGender.value);
+    console.log(thePet);
+    //push obj into the array
+    salon.pets.push(thePet);
+    //display array
+    console.log(salon.pets);
+    //alert
+}

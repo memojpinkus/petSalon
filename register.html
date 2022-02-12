@@ -4,10 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="stylesheet" href="styles/mystyle.css">
     <title>Register</title>
 </head>
 <body>
     
+    <div class="main-menu">
+        <menu>
+            <h1>Pet Salon</h1>
+        </menu>
+    
+        <nav class="menu">
+            <div class="menu-links">
+                <a href="index.html">Main</a>
+                <a href="register.html">Register</a>
+            </div>
+        </nav>
+    </div>
+
     <!-- create a form with the following inputs
     name, age, gender, breed, service, owner, contact -->
 
@@ -22,10 +37,35 @@
         <div>
             <input type="text" id="txtGender" placeholder="Enter the gender">
         </div>
+        <div>
+            <input type="text" id="txtBreed" placeholder="Enter the breed">
+        </div>
+        <div>
+            <select class="select-class" id="selService" placeholder="Enter the service:">
+                <option value="nails cut">Nails cut</option>
+                <option value="shower">Shower</option>
+                <option value="grooming">Grooming</option>
+            </select>
+        </div>
+        <div>
+            <input type="text" id="txtOwner" placeholder="Enter the owner's name:">
+        </div>
+        <div>
+            <input type="text" id="txtContact" placeholder="Enter contact:">
+        </div>
         <button onclick="register();">Register</button>
     </div>
 
-    <div id = "salonInformation">
+    <div class="search">
+        <input type="text" id="txtSearch" placeholder="Enter a name">
+        <button onclick="searchPet();">Search</button>
+        <button id="btnClear" onclick="showPetsCards();">Clear</button>
+    </div>
+
+    <h2 id="headerList">Pets List</h2>
+
+    <div id="petList" class="pets">
+        <!-- display pets here -->
 
     </div>
 
